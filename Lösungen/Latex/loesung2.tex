@@ -1,0 +1,118 @@
+\documentclass[a4paper]{article} 
+\usepackage{minted}
+\usemintedstyle{friendly}
+\input{head}
+
+\sheetsubmission{}
+\sheetnumber{1}
+\sheetdate{22.4.2021}
+
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\input{header}
+
+%-------------------------------
+%	CONTENTS
+%-------------------------------
+
+\section{}
+\begin{minted}{python}
+x = input("X: ")
+y = input("Y: ")
+z = input("Z: ")
+
+x = float(x)
+y = float(y)
+z = float(z)
+
+median = 0
+
+if x <= y <= z or z <= y <= x:
+  median = y
+elif x <= z <= y or y <= z <= x:
+  median = z
+else:
+  median = x
+
+print(f"Der Median ist {median}")
+\end{minted}
+
+\section{}
+\begin{minted}{python}
+for k in range(1, 101):
+  name = ""
+  # Durch den folgenden Weg spart man sich ein Conditional
+  # für den Fall, dass k durch 15 teilbar ist.
+  if k % 3 == 0:
+    name = name + "Fizz"
+  if k % 5 == 0:
+    name = name + "Bang"
+  # Ah man muss auch noch prüfen, ob man ein Wort oder die Zahl ausgibt
+  # Daher klappt es leider doch nicht mit nur 2 Conditionals
+  if name:
+    print(name)
+  else:
+    print(k)
+\end{minted}
+
+\newpage
+
+\section{} 
+\begin{minted}{python}
+word = input("Gib ein Wort an: ")
+counter = 0
+
+for letter in word:
+  if letter == "a" or letter == "A":
+    counter += 1  # shorthand for counter = counter + 1
+  if letter == "e" or letter == "E":
+    counter += 1
+  if letter == "i" or letter == "I":
+    counter += 1
+  if letter == "o" or letter == "O":
+    counter += 1
+  if letter == "u" or letter == "U":
+    counter += 1
+
+print(f"Das Word {word} enthält {counter} Vokale")
+\end{minted}
+\begin{minted}{python}
+
+\end{minted}
+
+\section{}
+\begin{minted}{python}
+# Um eine Breite von 15 zu erreichen genügen schon 8 Zeilen
+# Da die For-Schleifen, nie bis zur oberen Schranke gehen,
+# setzen wir die Zeilenzahl auf 9
+
+number_of_rows = 9
+
+# Hier kommt die Baumkrone
+for row in range(1, number_of_rows):
+  number_of_stars = 2 * row - 1
+  row_string = ""
+  # Man braucht erst einige Leerzeichen
+  for padding in range(1, number_of_rows - row):
+    row_string = " " + row_string
+  # Und dann kommen die Sterne
+  for star in range(1, number_of_stars + 1):
+    row_string = row_string + "*"
+  print(row_string)
+
+# Und hier der Stamm
+for row in range(1, number_of_rows):
+  row_string = ""
+  for padding in range(1, number_of_rows - 2):
+    row_string = " " + row_string
+  row_string = row_string + "|||"
+  print(row_string)
+
+\end{minted}
+
+\end{document}

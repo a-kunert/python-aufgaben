@@ -1,0 +1,131 @@
+\documentclass[a4paper]{article} 
+\usepackage{minted}
+\usemintedstyle{friendly}
+\input{head}
+
+\sheetsubmission{}
+\sheetnumber{1}
+\sheetdate{22.4.2021}
+
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\input{header}
+
+%-------------------------------
+%	CONTENTS
+%-------------------------------
+
+\section{}
+\begin{minted}{python}
+# double quotes have to be escaped with a backslash
+print("In Pyhton können Strings mittels ' oder \" oder \"\"\" definiert werden.")
+\end{minted}
+
+\section{}
+\begin{minted}{python}
+first_name = input("Dein Vorname: ")
+last_name = input("Dein Nachname: ")
+street = input("Deine Straße: ")
+house_number = input("Deine Hausnummer: ")
+zip_code = input("Deine PLZ: ")
+city = input("Deine Stadt: ")
+
+# linefeeds can be created by using the special charakter \n
+print(f"{first_name} {last_name}\n{street} {house_number}\n{zip_code} {city}")
+\end{minted}
+
+
+\section{} 
+\begin{minted}{python}
+initial_balance = input("Anfänglicher Kontostand: ")
+savings_rate = input("Sparrate: ")
+
+# cast strings to floats
+initial_balance = float(initial_balance)
+savings_rate = float(savings_rate)
+
+# transform everything to integer cents instead of float euros
+initial_balance = int(initial_balance * 100)
+savings_rate = int(savings_rate * 100)
+
+balance = initial_balance
+
+# after 1st year
+balance += savings_rate  # savings rate is added at start of year
+interest = 0.03 * balance
+balance += int(interest)
+# Alternatively you can also compute the new balance by: balance = int(1.03 * balance)
+# division by 100 gives results in eur
+print(f"Der Kontostand nach einem Jahr beträgt: {balance/100}")
+
+# after 2nd year
+balance += savings_rate
+balance *= 1.03
+balance = int(balance)
+print(f"Der Kontostand nach zwei Jahren beträgt: {balance/100}")
+
+# after 3rd year
+balance += savings_rate
+balance *= 1.03
+balance = int(balance)
+print(f"Der Kontostand nach drei Jahren beträgt: {balance/100}")
+\end{minted}
+\newpage
+\begin{minted}{python}
+# after 4th year
+balance += savings_rate
+balance *= 1.03
+balance = int(balance)
+print(f"Der Kontostand nach vier Jahren beträgt: {balance/100}")
+\end{minted}
+
+\section{}
+\begin{minted}{python}
+# Part (a)
+length = input("Länge in Meter: ")
+length = float(length)
+print(f"Die Länge in Kilometern beträgt {length/1000}km")
+
+# Part (b)
+temp = input("Temperatur in Grad Celsius: ")
+temp = float(temp)
+temp = temp + 273.15
+temp = int(temp * 100)/100  # my creative way to round to 2 figures
+print(f"Die Temperatur in Grad Kelvin beträgt {temp}")
+
+# Part (c)
+length = input("Länge in Zentimeter: ")
+length = float(length)
+length = length/2.54
+length = int(length*100)/100  # my creative way to round to 2 figures
+print(f"Die Länge in Zoll beträgt {length}")
+
+# Part (d)
+temp = input("Temperatur in Grad Celsius: ")
+temp = float(temp)
+temp = 9/5 * temp + 32  # you find this conversion rule on Wikipedia
+temp = int(temp * 100)/100  # my creative way to round to 2 figures
+print(f"Die Temperatur in Grad Fahrenheit beträgt {temp}")
+
+
+# Part (e)
+FOOT_IN_METER = 0.3048  # By convention uppercase names are used for constants
+INCH_IN_METER = 0.0254
+length = input("Länge in Metern: ")
+length = float(length)
+# compute the whole feet contained in the length using integer division:
+feet = length // FOOT_IN_METER  
+feet = int(feet)
+# compute the remainder after deducting an integer number of feet
+remainder = length % FOOT_IN_METER  
+inches = remainder / INCH_IN_METER  # convert the remainder to inches
+inches = int(inches * 100)/100  # round creatively
+print(f'{length} Meter entsprechedn {feet} ft. {inches}"')
+\end{minted}
+
+\end{document}

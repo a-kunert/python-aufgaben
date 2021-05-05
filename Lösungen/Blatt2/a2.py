@@ -5,7 +5,7 @@ for k in range(1, 101):
     if k % 3 == 0:
         name = name + "Fizz"
     if k % 5 == 0:
-        name = name + "Bang"
+        name = name + "Buzz"
     # Ah man muss auch noch prüfen, ob man ein Wort oder die Zahl ausgibt
     # Daher klappt es leider doch nicht mit nur 2 Conditionals
     if name:

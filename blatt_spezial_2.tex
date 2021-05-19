@@ -1,0 +1,73 @@
+\documentclass[a4paper]{article} 
+\input{head}
+
+\sheetsubmission{}
+\sheetnumber{Spezialaufgaben II}
+\sheetdate{20.5.2021}
+\usepackage{minted}
+\usemintedstyle{friendly}
+\usepackage{csquotes}
+\newcommand{\pybw}[1]{\mintinline[style=bw]{python}{#1}}
+\newcommand{\py}[1]{\mintinline{python}{#1}}
+
+
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\input{header}
+
+%-------------------------------
+%	CONTENTS
+%-------------------------------
+
+\section{Rekursive Funktionen}
+Die Folge der Fibonacci-Zahlen ist wie folgt definiert: Das $n$-te Folgenglied ist die Summe der beiden vorherigen Folgenglieder. Die ersten beiden Folgenglieder sind als $1$ definiert. Die ersten Fibonacci-Zahlen sind $1,1,2,3,5,8,13,\dots$. 
+
+\vspace{2pt}
+
+Schreibe eine Funktion, die eine Zahl $n$ erwartet und die $n$-te Fibonacci-Zahl zurückgibt. Realisiere die Funktion einmal als \emph{rekursive} Funktion und einmal über eine Schleife. Miss jeweils die Ausführungszeiten. Welche ist effizienter und warum? 
+
+\section{Webseiten verstehen}
+Schaue Dir eine Webseite mit den Entwicklerwerkzeugen an. Diese kannst Du in Chrome/Firefox mit der Tastaturkombination  Ctrl/Cmd + Shift + I öffnen. Welche Struktur hat so eine Seite? 
+Verwende das Modul \pybw{requests} um den Quellcode einer beliebige Webseite in ein Python-Programm zu bringen.  
+
+
+\section{Webscraping}
+Im Folgenden geht es darum, eine Liste von Ländern samt Daten von der Webseite 
+
+\texttt{https://de.wikipedia.org/wiki/Liste\_der\_Staaten\_der\_Erde} auszulesen und als JSON-Datei abzuspeichern. Du kannst Dich grob an der Anleitung auf \texttt{https://realpython.com/beautiful-soup-web-scraper-python} orientieren. 
+Die Einträge des JSONS sollen am Ende wie folgt aussehen: 
+
+\begin{minted}[style=bw]{python}
+{
+ "name":"Afghanistan"
+ "capital":"Kabul"
+ "population":35500000
+ "iso":"AFG"
+}
+\end{minted}
+
+Gehe dabei nach folgenden Schritten vor: 
+
+\begin{itemize}
+	\item Öffne die Seite mittels \pybw{requests}.
+	\item Finde die Tabelle, indem Du mittels \pybw{beautifulsoup4} den Quellcode der Seite filterst.
+	\item Mittels einer Schleife über die Zeilen und Spalten der Tabelle kannst Du die Daten in ein Listen/Dictionary-Format bringen. 
+	\item Verwende reguläre Ausdrücke (das Modul \pybw{re}) um die Fußnotenverweise (z.B. [7] bei Abchasien) zu entfernen. 
+	\item Analog lassen sich die Einwohnerzahlen bereinigen
+	\item Wandle die Einwohnezahlen zu \pybw{integers} um. 
+	\item Schaffst Du es die Anmerkungen zum Ländernamen (wie z.B. bei Dänemark und Frankreich) ebenso verschwinden zu lassen? 
+	\item Speichere mittels \pybw{json} die Daten in einer Datei ab. 
+\end{itemize}
+
+
+
+
+
+
+
+\end{document}

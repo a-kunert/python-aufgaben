@@ -1,0 +1,53 @@
+\documentclass[a4paper]{article} 
+\input{head}
+\usepackage{minted}
+\usemintedstyle{friendly}
+\sheetsubmission{Abgabe bis Di. 8.6.2021 per E-Mail oder Slack}
+\sheetnumber{4}
+\sheetdate{20.5.2021}
+\usepackage{csquotes}
+\newcommand{\pybw}[1]{\mintinline[style=bw]{python}{#1}}
+\newcommand{\py}[1]{\mintinline{python}{#1}}
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\input{header}
+
+%-------------------------------
+%	CONTENTS
+%-------------------------------
+
+\section{Merge-Funktion}
+Schreibe eine Funktion, die zwei Dictionaries zu einem verschmilzt. Falls ein Key in beiden Dictionaries vorkommt, so soll der jeweilige Wert des zweiten Parameters genommen werden. 
+
+\vspace{4pt}
+\textbf{Beispiel}: \py{merge_dict({"a":1, "b":2}, {"b":3, "c":4}) = {"a":1, "b":3, "c":4}}.  
+
+\section{Maximalstellen finden}
+Schreibe eine Funktion, die ein Dictionary mit \pybw{int}-Werten als Eingabe erwartet. Es soll dann eine Liste aller Schlüssel zurückgegeben werden, an denen der Wert maximal ist. 
+
+\vspace{4pt}
+\textbf{Beispiel}: \py{find_max({"a":0, "b":3, "c":2, "d":3, "e":-1})} = \py{["b","d"]}  
+
+
+\section{}
+Schreibe eine Funktion, die einen String erwartet und den String in umgekehrter Reihenfolge zurückgibt. 
+
+\vspace{4pt}
+\textbf{Beispiel}: \py{my_func("Hallo") = "ollaH"}  
+
+
+\section{}
+Schreibe eine Funktion, die einen String erwartet und \pybw{True} zurückgibt, falls der String ein Palindrom ist, andernfalls soll sie \pybw{False} zurückgeben. Die Groß-/Kleinschreibung soll dafür nicht berücksichtigt werden. 
+
+\vspace{4pt}
+
+{\footnotesize\textbf{Hinweis:} \\
+	Ein Palindrom ist ein Wort bzw. ein Text, der vorwärts wie rückwärts gelesen identisch ist. Ein Beispiel dafür ist das Wort \enquote{Lagerregal}. \\
+Um die Groß-/Kleinschreibung zu ignorieren, kann man den String vorab mit der Methode \pybw{.lower()} in Kleinbuchstaben verwandeln. 
+
+\end{document}

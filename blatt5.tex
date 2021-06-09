@@ -1,0 +1,55 @@
+\documentclass[a4paper]{article} 
+\input{head}
+\usepackage{minted}
+\usemintedstyle{friendly}
+\sheetsubmission{Abgabe bis Di. 29.6.2021 per E-Mail oder Slack}
+\sheetnumber{5}
+\sheetdate{10.6.2021}
+\usepackage{csquotes}
+\newcommand{\pybw}[1]{\mintinline[style=bw]{python}{#1}}
+\newcommand{\py}[1]{\mintinline{python}{#1}}
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\input{header}
+
+%-------------------------------
+%	CONTENTS
+%-------------------------------
+
+In der First-Class-Cloud findest Du im Ordner \texttt{Quiz} die Datei \texttt{countries.json}. Lade Dir diese Datei in Dein Python-Projekt. 
+
+\section{Datei einlesen}
+Verwende das Modul \texttt{json}, um die Datei \texttt{countries.json} (siehe oben) einzulesen, d.h. daraus eine Liste von Ländern (=Dictionaries) zu machen. Gib mittels einer \pybw{for}-Schleife die Hauptstädte aller Länder auf der Konsole aus. Die Ausgabe soll wie folgt aussehen: 
+\begin{verbatim}
+Kabul ist die Hauptstadt von Afghanistan
+Tirana ist die Hauptstadt von Albanien
+...
+\end{verbatim}
+
+
+\section{}
+Schreibe eine Funktion, die eine beliebige Liste von Ländern (im Format wie in \texttt{countries.json}) annimmt, und eine Liste von Hauptstädten (im Format \pybw{str} ) zurückgibt. 
+
+\section{Länder nach Kontinent filtern}
+Schreibe eine Funktion, die eine beliebige Liste von Ländern (im Format wie in \texttt{countries.json}), sowie eine Liste von Kontinenten (im Format \pybw{str}) annimmt. Sie soll dann eine Liste alle Länder zurückgeben, die in einem der angegebenen Kontinente liegen. 
+
+\section{}
+Google nach dem Modul \texttt{random}. Schreibe eine Funktion, die eine Liste annimmt. Dabei darf man annehmen, dass die Eingangsliste mindestens 4 Elemente hat und keine doppelten Elemente vorkommen. Die Funktion soll eine Liste mit genau 4 Einträgen zurückgeben, die folgende Eigenschaften hat. 
+\begin{itemize}
+	\item Der erste Eintrag der Eingangsliste ist in der Ausgangsliste enthalten
+	\item Die Position dieses Eintrages ist zufällig (d.h. nicht immer an Position \pybw{0})
+	\item Die weiteren Einträge sind zufällig gewählte Elemente der Eingabeliste
+	\item Es gibt keine doppelten Einträge in der Ausgangsliste
+\end{itemize}
+Die Eingangsliste soll dabei nicht verändert werden. 
+
+
+
+
+
+\end{document}

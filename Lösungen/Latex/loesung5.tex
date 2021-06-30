@@ -1,0 +1,70 @@
+\documentclass[a4paper]{article} 
+\usepackage{minted}
+\usemintedstyle{friendly}
+\input{head}
+
+\sheetsubmission{}
+\sheetnumber{5}
+\sheetdate{10.6.2021}
+
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\input{header}
+
+%-------------------------------
+%	CONTENTS
+%-------------------------------
+
+\section{}
+\begin{minted}{python}
+import json
+
+with open("countries.json", encoding="UTF-8") as file:
+  countries = json.load(file)
+
+for country in countries:
+  print(f"{country['capital']} ist die Hauptstadt von {country['name']}")
+\end{minted}
+
+\section{}
+\begin{minted}{python}
+def countries_to_capitals(countries):
+  result = []
+  for country in countries:
+  result.append(country["capital"])
+  return result
+\end{minted}
+
+\section{} 
+\begin{minted}{python}
+def filter_countries_by_regions(countries, regions):
+  result = []
+  for country in countries:
+    if country["region"] in regions:
+      result.append(country)
+  return result
+\end{minted}
+\section{}
+\begin{minted}{python}
+import random
+
+
+def shuffle_list(input):
+  first = input[0]
+  others = []
+  for item in input:
+    if item != first:
+      others.append(item)
+  random.shuffle(others)
+  result = others[0:3]
+  result.append(first)
+  random.shuffle(result)
+  return result
+\end{minted}
+
+\end{document}
